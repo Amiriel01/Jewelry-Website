@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.appt-schedule {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: rgb(105, 77, 117);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+}
+
+.header-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    border-bottom: solid 2px rgb(105, 77, 117);
+    padding: .5rem;
+    padding-left: 15rem;
+    margin-top: -2rem;
+}
+
+#appt-text:hover,
+#link:hover {
+    color: rgb(159, 194, 204);
+    cursor: pointer;
+}
+
+.link,
+.link:visited {
+    color: rgb(105, 77, 117);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#logo-large {
+    width: 5vw;
+    /* border-radius: 50px; */
+    padding-left: 3rem;
+    position: relative;
+    top: 1rem;
+}
+
+#bag {
+    color: rgb(105, 77, 117);
+    width: 2.25rem;
+}
+
+.badge {
+    position: relative;
+    right: 18rem;
+    background-color: rgb(105, 77, 117);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50px;
+    padding:.25rem;
+    color: white;
+}
+
+#ring-img {
+    border-bottom: solid 2px rgb(105, 77, 117);
+}
