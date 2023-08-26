@@ -1,11 +1,17 @@
-import Header from './Header'
+import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import './App.css'
-import HomePage from './Header'
+import HomePage from './Homepage'
+import About from './About';
 
 function App() {
 
   return (
-    <HomePage />
+    
+      <Routes>
+        <Route path="*" element={<HomePage />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    
   )
 }
 
