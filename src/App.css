@@ -4,6 +4,10 @@
     width: 100vw;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .appt-schedule {
     text-align: center;
     padding: 1rem;
@@ -64,4 +68,26 @@
 
 #ring-img {
     border-bottom: solid 2px rgb(105, 77, 117);
+}
+
+.welcome-container {
+    margin-top: 2rem;
+}
+
+#welcome-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color:  rgb(105, 77, 117);
+}
+
+#welcome-info {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color:  rgb(105, 77, 117);
+    width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
 }
