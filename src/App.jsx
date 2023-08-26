@@ -5,6 +5,8 @@ import About from './About';
 import Team from './Team';
 import Services from './Services';
 import Appraisals from './Appraisals';
+import ShopPage from './ShopPage';
+import Cart from './Cart';
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
         <Route path="team" element={ <Team /> } />
         <Route path="services" element={ <Services /> } />
         <Route path="appraisals" element={ <Appraisals /> } />
+        <Route path="shoppage" element={ <ShopPage /> } />
+        <Route path="cart" element={ <Cart /> } />
       </Routes>
     
   )

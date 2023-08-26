@@ -47,8 +47,16 @@ export default function Header() {
 
             <div>
                 <ul>
-                    <li>Shop</li>
-                    <li>Cart</li>
+                    <li>
+                        <Link to="ShopPage">
+                            Shop Page
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="Cart">
+                            Cart
+                        </Link>
+                    </li>
                 </ul>
             </div>
 
