@@ -1,8 +1,6 @@
 import React from "react";
 import logolarge from './images/logolarge.png'
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
-import App from "./App";
-import About from "./About";
 
 export default function Header() {
     return (
@@ -19,9 +17,21 @@ export default function Header() {
                                 About Us
                             </Link>
                         </li>
-                        <li>Meet the Team</li>
-                        <li>Shop Services</li>
-                        <li>Appraisals</li>
+                        <li>
+                            <Link to="Team">
+                                Meet the Team
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="Services">
+                                Shop Services
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="Appraisals">
+                                Appraisals
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 
@@ -34,7 +44,7 @@ export default function Header() {
                     </Link>
                 </li>
             </ul>
-            
+
             <div>
                 <ul>
                     <li>Shop</li>
