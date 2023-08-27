@@ -27,7 +27,7 @@ export default function HomePage() {
                 <div className="footer">
                     <div className="care-ship-gift-container">
                         <div className="care-container">
-                            <span class="material-symbols-outlined">
+                            <span className="material-symbols-outlined">
                                 medical_services
                             </span>
                             <div id="care-title">
@@ -38,7 +38,7 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="shipping-container">
-                            <span class="material-symbols-outlined">
+                            <span className="material-symbols-outlined">
                                 local_shipping
                             </span>
                             <div id="shipping-title">
@@ -49,7 +49,7 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="gift-container">
-                            <span class="material-symbols-outlined">
+                            <span className="material-symbols-outlined">
                                 redeem
                             </span>
                             <div id="gift-title">
@@ -65,7 +65,7 @@ export default function HomePage() {
                     <div className="logo-small">
                         <img id='logo-small' src={logolarge} alt="Store Logo"></img>
                     </div>
-                    <div class="contact-container">
+                    <div className="contact-container">
                         <div id="contact-title">
                             CONTACT US
                         </div>
@@ -89,13 +89,13 @@ export default function HomePage() {
                             GET CONNECTED
                         </div>
                         <div className="facebook-info">
-                            <i class="devicon-facebook-plain"></i>
+                            <i className="devicon-facebook-plain"></i>
                             <div id="facebook">
                                 Facebook
                             </div>
                         </div>
                         <div className="instagram-info">
-                            <span id="instagram-icon" class="material-symbols-outlined">
+                            <span id="instagram-icon" className="material-symbols-outlined">
                                 photo_camera
                             </span>
                             <div id="instagram">

@@ -106,7 +106,8 @@ h1 {
 .team-footer,
 .repair-footer,
 .appraisal-footer,
-.shop-footer {
+.shop-footer,
+.appointment-footer {
     text-align: center;
     margin-bottom: 1rem;
     color: rgb(105, 77, 117);
@@ -134,7 +135,8 @@ h1 {
 #repair-button,
 #appraisal-button,
 #shop-button,
-#cart-button {
+#cart-button,
+#submit-button {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -339,13 +341,18 @@ h2 {
     text-decoration: underline;
 }
 
-.img-info-custom-container {
+.img-info-custom-container,
+.form-container {
     display: flex;
     padding: 2rem;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+}
+
+.img-info-custom-container {
     border-bottom: solid 2px rgb(105, 77, 117);
 }
+
 
 .all-step-containers {
     background-color: #FAF9F6;
@@ -353,6 +360,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
+    border-bottom: solid 2px rgb(105, 77, 117);
 }
 
 .step-container {
@@ -381,6 +389,34 @@ h2 {
 
 .step-paragraph {
     padding-bottom: .75rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    align-items: center;
+    font-size: 24px;
+    color: rgb(105, 77, 117);
+}
+
+input,
+select {
+    padding: .25rem;
+    color: rgb(105, 77, 117);
+    font-size: 16px;
+}
+
+option {
+    text-align: center;
+}
+
+#success {
+    white-space: pre-wrap;
+    width: 40rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 
