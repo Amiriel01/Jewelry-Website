@@ -14,43 +14,46 @@ export default function Header() {
                 <div >
                     <ul>
                         <li>
-                            <Link to="Homepage">
+                            <Link to="/Homepage">
                                 <img id='logo-large' src={logolarge} alt="Store Logo"></img>
                             </Link>
                         </li>
                     </ul>
                     <ul className="header-links">
                         <li>
-                            <Link id="link" className="link" to="About">
+                            <Link id="link" className="link" to="/About">
                                 About Us
                             </Link>
                         </li>
                         <li>
-                            <Link id="link" className="link" to="Team">
+                            <Link id="link" className="link" to="/Team">
                                 Meet the Team
                             </Link>
                         </li>
                         <li>
-                            <Link id="link" className="link" to="Services">
+                            <Link id="link" className="link" to="/Services">
                                 Jeweler Services
                             </Link>
                         </li>
                         <li>
-                            <Link id="link" className="link" to="Appraisals">
+                            <Link id="link" className="link" to="/Appraisals">
                                 Appraisals
                             </Link>
                         </li>
                         <li>
-                            <Link id="link" className="link" to="ShopPage">
+                            <Link id="link" className="link" to="/ShopPage">
                                 Shop Page
                             </Link>
                         </li>
-                        <li>
-                            <Link id="link" className="link" to="Cart">
-                                <img id="bag" src={bag} alt="Bag for Items" />
+                        <li className="bag-hover">
+                            <Link id="link" className="link" to="/Cart">
+                                <span className="material-symbols-outlined">
+                                    shopping_bag
+                                </span>
                             </Link>
+                            <div className="badge">0</div>
                         </li>
-                        <div className="badge">0</div>
+
                     </ul>
                 </div>
             </div>
