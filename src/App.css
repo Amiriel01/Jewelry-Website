@@ -31,6 +31,7 @@ html, body {
     padding-left: 15rem;
     margin-top: -2rem;
     padding-top: 1rem;
+    background-color: #FAF9F6;
 }
 
 #appt-text:hover,
@@ -74,8 +75,6 @@ html, body {
     text-align: center;
 }
 
-
-
 #ring-img {
     border-bottom: solid 2px rgb(105, 77, 117);
     width: 100%;
@@ -101,9 +100,107 @@ html, body {
     width: 45rem;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 2rem;
 }
 
 .material-symbols-outlined {
     font-size: 2.2rem;
-
+    color:  rgb(105, 77, 117);
 }
+
+.footer {
+    display: flex;
+    background-color: #FAF9F6;
+    padding: 2rem;
+    border-top: solid 2px rgb(105, 77, 117);
+    justify-content: center;
+}
+
+.care-ship-gift-container {
+    display: flex;
+}
+
+.care-container,
+.shipping-container,
+.gift-container {
+    width: 15rem;
+    padding: 2rem;
+    text-align: center;
+    color:  rgb(105, 77, 117);
+}
+
+.care-container,
+.shipping-container{
+    border-right: solid 2px rgb(105, 77, 117);
+}
+
+#care-title, 
+#shipping-title,
+#gift-title {
+    margin-bottom: .25rem;
+    font-weight: bold;
+}
+
+#logo-small {
+    width: 7vw;
+    padding-left: 3rem;
+}
+
+.bottom-footer {
+    display: flex;
+    background-color: rgb(105, 77, 117);
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-small,
+.contact-container,
+.social-media-container,
+.hours-container {
+    padding: 3rem;
+    color: white
+}
+
+#logo-small,
+.contact-container,
+.social-media-container {
+    border-right: solid 2px #FAF9F6;
+    color: #FAF9F6;
+    width: 10rem;
+    height: 8rem;
+}
+
+#contact-title,
+#social-title,
+#hours-title {
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.facebook-info,
+.instagram-info {
+    display: flex;
+    padding-bottom: 1rem;
+}
+
+#instagram-icon {
+    color: white;
+    font-size: 1rem;
+    padding-right: .5rem;
+}
+
+.devicon-facebook-plain {
+    padding-right: .5rem;
+}
+
+#location-title,
+#phone-title {
+    font-weight: bold;
+    padding-bottom: .5rem;
+}
+
+#location-info {
+    padding-bottom: .5rem;
+}
+
