@@ -8,7 +8,7 @@ export default function Header() {
         <div>
             <div className="header">
                 <div className="appt-schedule">
-                    <p id="appt-text">Schedule a Custom Design Appointment</p>
+                    <p id="appt-text">Schedule a Custom Design or Appraisal Appointment Today</p>
                 </div>
 
                 <div >

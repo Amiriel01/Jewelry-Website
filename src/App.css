@@ -97,7 +97,8 @@ h1 {
 
 .about-footer,
 .team-footer,
-.repair-footer {
+.repair-footer,
+.appraisal-footer {
     text-align: center;
     margin-bottom: 1rem;
     color:  rgb(105, 77, 117);
@@ -112,7 +113,8 @@ h1 {
 
 #team-button-container,
 #repair-button-container,
-#appraisal-button-container {
+#appraisal-button-container,
+#shop-button-container {
     background-color: #FAF9F6;
     display: flex;
     justify-content: center;
@@ -121,7 +123,8 @@ h1 {
 
 #team-button,
 #repair-button,
-#appraisal-button {
+#appraisal-button,
+#shop-button {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -140,7 +143,8 @@ h2 {
 
 #welcome-info,
 .about-paragraph,
-#repair-paragraph {
+#repair-paragraph,
+.appraisal-paragraph {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -149,6 +153,18 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 2rem;
+}
+
+.appraisal-pricing {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color:  rgb(105, 77, 117);
+    width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
+    font-weight: bold;
 }
 
 .material-symbols-outlined {
@@ -275,12 +291,16 @@ h2 {
     font-size: 1.5rem;
 }
 
-.repair-container1 {
+.repair-container1,
+.appraisal-container {
     display: flex;
     padding: 3rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.repair-info-container {
+.repair-info-container,
+.appraisal-info-container {
     padding-left: 5rem;
 }
 
