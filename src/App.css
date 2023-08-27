@@ -75,7 +75,8 @@ html, body {
     text-align: center;
 }
 
-#ring-img {
+#ring-img,
+#store-img {
     border-bottom: solid 2px rgb(105, 77, 117);
     width: 100%;
 }
@@ -84,15 +85,53 @@ html, body {
     margin-top: 2rem;
 }
 
-#welcome-title {
+#welcome-title,
+h1 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
     color:  rgb(105, 77, 117);
+    margin-top: 1rem;
 }
 
-#welcome-info {
+.about-footer {
+    text-align: center;
+    margin-bottom: 1rem;
+    color:  rgb(105, 77, 117);
+    background-color: #FAF9F6;
+    padding-top: 1rem;
+    margin-bottom: 0;
+    border-top: solid 2px rgb(105, 77, 117);
+    display: flex;
+    justify-content: center;
+}
+
+#team-button-container {
+    background-color: #FAF9F6;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+#team-button {
+    padding: 1rem;
+    background-color: rgb(105, 77, 117);
+    padding: .5rem;
+    color: white;
+    font-weight: bold;
+    margin-top: .5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+#welcome-info,
+.about-paragraph {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -203,4 +242,18 @@ html, body {
 #location-info {
     padding-bottom: .5rem;
 }
+
+#diamond {
+    /* margin-top: .85rem; */
+    font-size: 1.5rem;
+}
+
+.employee-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+}
+
+
 
