@@ -21,7 +21,7 @@ export default function HomePage() {
                         WELCOME TO OUR STORE
                     </div>
                     <div id="welcome-info">
-                        Unique Design has been located in Jewerly City for 50 years. This long-lived, family owned business has been a staple of the community for many years. Unique Design's staff has over 100 years of combined jewelry experience. You can trust that you will leave Unique Design with the highest quality future family heirloom money can buy. Our store offers a full service jewelery shop, appraisals for insurance and resale purposes, custom jewerly design support, and a beautiful showroom display of custom jewerly to meet all of your jewelry needs.
+                        Unique Design has been located in Jewerly City for 50 years. This long-lived, family owned business has been a staple of the community for many years. Unique Design's staff has over 100 years of combined jewelry experience. You can trust that you will leave Unique Design with the highest quality future family heirloom money can buy. Our store offers a full service jewelry shop, appraisals for insurance and resale purposes, custom jewerly design support, and a beautiful showroom display of custom jewerly to meet all of your jewelry needs.
                     </div>
                 </div>
                 <div className="footer">
@@ -34,7 +34,7 @@ export default function HomePage() {
                                 LIFETIME CARE PLAN
                             </div>
                             <div id="care-info">
-                                Protect your valuable jewelrey, with a lifetime care plan. Ask your sales consultant for details.
+                                Protect your valuable jewelry, with a lifetime care plan. Ask your sales consultant for details.
                             </div>
                         </div>
                         <div className="shipping-container">

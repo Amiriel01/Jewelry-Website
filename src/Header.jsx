@@ -32,7 +32,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link id="link" className="link" to="/Services">
-                                Jeweler Services
+                                Repair Services
                             </Link>
                         </li>
                         <li>
@@ -42,7 +42,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link id="link" className="link" to="/ShopPage">
-                                Shop Page
+                                Shop Inventory
                             </Link>
                         </li>
                         <li className="bag-hover">
