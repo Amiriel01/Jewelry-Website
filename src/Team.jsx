@@ -13,6 +13,7 @@ import custom from './images/custom.png'
 import finance from './images/finance.png'
 import jeweler1 from './images/jeweler1.png'
 import jeweler2 from './images/jeweler2.png'
+import { Link } from "react-router-dom";
 
 export default function Team() {
     const employees = ([
@@ -111,6 +112,24 @@ export default function Team() {
                     })
                     }
                 </div>
+                <div className="repair-footer">
+                        <span className="material-symbols-outlined" id="diamond" >
+                            diamond
+                        </span>
+                        <h2>
+                            GUARENTEED REPAIR SERVICES
+                        </h2>
+                        <span className="material-symbols-outlined" id="diamond" >
+                            diamond
+                        </span>
+                    </div>
+                    <div id="repair-button-container">
+                        <Link id="link" className="link" to="/Services">
+                            <button id="repair-button">
+                                Repair Services
+                            </button>
+                        </Link>
+                    </div>
             </main >
 
         </div >

@@ -95,7 +95,8 @@ h1 {
     margin-top: 1rem;
 }
 
-.about-footer {
+.about-footer,
+.repair-footer {
     text-align: center;
     margin-bottom: 1rem;
     color:  rgb(105, 77, 117);
@@ -105,16 +106,19 @@ h1 {
     border-top: solid 2px rgb(105, 77, 117);
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
-#team-button-container {
+#team-button-container,
+#repair-button-container {
     background-color: #FAF9F6;
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;
 }
 
-#team-button {
+#team-button,
+#repair-button {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -244,7 +248,6 @@ h2 {
 }
 
 #diamond {
-    /* margin-top: .85rem; */
     font-size: 1.5rem;
 }
 
@@ -253,6 +256,18 @@ h2 {
     flex-wrap: wrap;
     gap: 4rem;
     justify-content: center;
+    text-align: center;
+    color: rgb(105, 77, 117)
+}
+
+.employee-image {
+    width: 20rem;
+    height: 20rem;
+}
+
+.employee-name {
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 
