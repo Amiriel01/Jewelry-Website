@@ -3,9 +3,11 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     width: 100vw;
 }
+
 /* body {
     overflow-x: hidden;
 } */
@@ -32,6 +34,11 @@ html, body {
     margin-top: -2rem;
     padding-top: 1rem;
     background-color: #FAF9F6;
+}
+
+#appt-text .link {
+    color: #FAF9F6;
+    font-size: 1.1rem;
 }
 
 #appt-text:hover,
@@ -70,7 +77,7 @@ html, body {
     width: 1rem;
     height: 1rem;
     border-radius: 50px;
-    padding:.25rem;
+    padding: .25rem;
     color: white;
     text-align: center;
 }
@@ -91,17 +98,18 @@ h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    color:  rgb(105, 77, 117);
+    color: rgb(105, 77, 117);
     margin-top: 1rem;
 }
 
 .about-footer,
 .team-footer,
 .repair-footer,
-.appraisal-footer {
+.appraisal-footer,
+.shop-footer {
     text-align: center;
     margin-bottom: 1rem;
-    color:  rgb(105, 77, 117);
+    color: rgb(105, 77, 117);
     background-color: #FAF9F6;
     padding-top: 1rem;
     margin-bottom: 0;
@@ -114,7 +122,8 @@ h1 {
 #team-button-container,
 #repair-button-container,
 #appraisal-button-container,
-#shop-button-container {
+#shop-button-container,
+#cart-button-container {
     background-color: #FAF9F6;
     display: flex;
     justify-content: center;
@@ -124,7 +133,8 @@ h1 {
 #team-button,
 #repair-button,
 #appraisal-button,
-#shop-button {
+#shop-button,
+#cart-button {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -144,11 +154,12 @@ h2 {
 #welcome-info,
 .about-paragraph,
 #repair-paragraph,
-.appraisal-paragraph {
+.appraisal-paragraph,
+.custom-paragraph {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color:  rgb(105, 77, 117);
+    color: rgb(105, 77, 117);
     width: 45rem;
     margin-left: auto;
     margin-right: auto;
@@ -159,7 +170,7 @@ h2 {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color:  rgb(105, 77, 117);
+    color: rgb(105, 77, 117);
     width: 45rem;
     margin-left: auto;
     margin-right: auto;
@@ -169,7 +180,7 @@ h2 {
 
 .material-symbols-outlined {
     font-size: 2.2rem;
-    color:  rgb(105, 77, 117);
+    color: rgb(105, 77, 117);
 }
 
 .footer {
@@ -190,15 +201,15 @@ h2 {
     width: 15rem;
     padding: 2rem;
     text-align: center;
-    color:  rgb(105, 77, 117);
+    color: rgb(105, 77, 117);
 }
 
 .care-container,
-.shipping-container{
+.shipping-container {
     border-right: solid 2px rgb(105, 77, 117);
 }
 
-#care-title, 
+#care-title,
 #shipping-title,
 #gift-title {
     margin-bottom: .25rem;
@@ -291,12 +302,15 @@ h2 {
     font-size: 1.5rem;
 }
 
-.repair-container1,
-.appraisal-container {
+.repair-container1 {
     display: flex;
     padding: 3rem;
     align-items: center;
     justify-content: center;
+}
+
+.custom-info-container {
+    padding: 2rem;
 }
 
 .repair-info-container,
@@ -305,12 +319,12 @@ h2 {
 }
 
 #services-title {
-        font-size: 1.75rem;
-        font-weight: bold;
-        padding-left: .5rem;
-        padding-right: .5rem;
-        color: rgb(105, 77, 117);
-        text-decoration: underline;
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    color: rgb(105, 77, 117);
+    text-decoration: underline;
 }
 
 .repair-services-list {
@@ -320,7 +334,54 @@ h2 {
     font-size: 1.5rem;
 }
 
+#small-title {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
+.img-info-custom-container {
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 2px rgb(105, 77, 117);
+}
+
+.all-step-containers {
+    background-color: #FAF9F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.step-container {
+    display: flex;
+    color: rgb(105, 77, 117);
+    width: 65rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+.step-info-container {
+    padding: 2.5rem;
+}
+
+#small-step-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-bottom: .5rem;
+}
+
+#large-step-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding-bottom: .5rem;
+}
+
+.step-paragraph {
+    padding-bottom: .75rem;
+}
 
 
 

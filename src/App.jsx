@@ -7,6 +7,7 @@ import Services from './Services';
 import Appraisals from './Appraisals';
 import ShopPage from './ShopPage';
 import Cart from './Cart';
+import FormPage from './FormPage';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     
       <Routes>
         <Route path="*" element={ <HomePage /> } />
+        <Route path="formpage" element={ <FormPage /> } />
         <Route path="about" element={ <About /> } />
         <Route path="team" element={ <Team /> } />
         <Route path="services" element={ <Services /> } />

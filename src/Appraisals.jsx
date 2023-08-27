@@ -17,7 +17,7 @@ export default function Appraisals() {
                             APPRAISAL SERVICES
                         </h1>
                         <p className="appraisal-paragraph">
-                        Unique Jewelry has a licensed Appraiser/Gemologist on staff to assist customers with their appraisal needs. Appraisals for insurance, resale, and and estate pricing can be scheduled by calling the store or filling out the form above.
+                        Unique Jewelry has a licensed Appraiser/Gemologist on staff to assist customers with their appraisal needs. Appraisals for insurance, resale, and and estate pricing can be scheduled by contacting or stopping by the store.
                     </p>
                     <p className="appraisal-paragraph">
                         Please remmeber that the prices of metals and gems fluctuate based on market conditions. Gold for instance, has had an significant increase in the past ten years, doubling in price. Having an accurate up-to-date appraisal will ensure that your valuable jewelry will stay fully insured. Unique Design recomends updating jewelry appraisals every three to five years.

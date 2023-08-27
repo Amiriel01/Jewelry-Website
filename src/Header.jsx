@@ -8,7 +8,11 @@ export default function Header() {
         <div>
             <div className="header">
                 <div className="appt-schedule">
-                    <p id="appt-text">Schedule a Custom Design or Appraisal Appointment Today</p>
+                    <p id="appt-text">
+                        <Link id="link" className="link" to="/FormPage">
+                            Schedule a Custom Design Appointment Today
+                        </Link>
+                    </p>
                 </div>
 
                 <div >
