@@ -112,12 +112,12 @@ export default function Team() {
                     })
                     }
                 </div>
-                <div className="repair-footer">
+                <div className="team-footer">
                         <span className="material-symbols-outlined" id="diamond" >
                             diamond
                         </span>
                         <h2>
-                            GUARENTEED REPAIR SERVICES
+                            TRUST US FOR QUALITY THAT IS SECOND TO NONE
                         </h2>
                         <span className="material-symbols-outlined" id="diamond" >
                             diamond
