@@ -45,7 +45,9 @@ export default function ShopPage() {
     return (
         <div>
             <header className="homepage">
-                <Header />
+                <Header 
+                val={val}
+                />
             </header>
             <main>
                 <h1>
@@ -117,7 +119,6 @@ export default function ShopPage() {
                         </button>
                     </Link>
                 </div>
-                <Header val={val}/>
             </main>
 
         </div>
