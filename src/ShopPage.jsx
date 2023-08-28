@@ -2,11 +2,18 @@ import React from "react";
 import Header from './Header.jsx'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
+
 
 export default function ShopPage() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [data, setData] = useState([])
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products/category/jewelery?limit=3")

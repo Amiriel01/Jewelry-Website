@@ -5,8 +5,17 @@ import App from "./App.jsx";
 import About from "./About.jsx";
 import ring from './images/ring.png'
 import logolarge from './images/logolarge.png'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from "react";
 
 export default function HomePage() {
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+    
     return (
         <div>
             <header className="homepage">

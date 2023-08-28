@@ -304,7 +304,8 @@ h2 {
     font-size: 1.5rem;
 }
 
-.repair-container1 {
+.repair-container1,
+.appraisal-container {
     display: flex;
     padding: 3rem;
     align-items: center;

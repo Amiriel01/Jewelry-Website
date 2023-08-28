@@ -8,6 +8,8 @@ import custom3 from './images/custom3.png'
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import HomePage from "./Homepage";
+import { useLocation } from 'react-router-dom'
+import { useEffect } from "react";
 
 export default function FormPage() {
 
@@ -17,6 +19,11 @@ export default function FormPage() {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [success, setSuccess] = useState("");
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

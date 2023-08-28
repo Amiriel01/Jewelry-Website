@@ -14,6 +14,8 @@ import finance from './images/finance.png'
 import jeweler1 from './images/jeweler1.png'
 import jeweler2 from './images/jeweler2.png'
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
+import { useEffect } from "react";
 
 export default function Team() {
     const employees = ([
@@ -91,6 +93,13 @@ export default function Team() {
         },
     ]
     );
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
 
     return (
         <div>
