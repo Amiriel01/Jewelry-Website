@@ -4,21 +4,50 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ShopPage() {
-    const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [data, setData] = useState([])
 
     useEffect(() => {
+        fetch("https://fakestoreapi.com/products/category/jewelery?limit=3")
+            .then((response) => {
+                if (!response) {
+                    throw new Error(
+                        `This is an HTTP error: The status is $(response.status)`
+                    );
+                }
+                return response.json();
+            })
+            // .then((json) => console.log(json))
+            .then((actualData) => {
+                setData(actualData);
+                setError(null);
+                console.log(actualData)
+            })
+            .catch((err) => {
+                setError(err.message)
+                setData(null)
+                console.log(err.message)
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
 
-        const getItems = async () => {
+    // const getItems = () => {
+    //     fetch("https://fakestoreapi.com/products/category/jewelery?limit=3")
+    //         .then(res => {
+    //             res.json()
+    //             // .then((json) => console.log(json)
+    //         })
+    //         .then(data => {
+    //             setItems(data)
+    //         })
+    // }
 
-        const response = await 
-            fetch("https://fakestoreapi.com/products/category/jewelery?limit=3")
-            .then((res) => res.json())
-            .then((json) => console.log(json))
-            // .then((data) => setItems(data))
-        }
-        getItems();
-    }, [])
-
+    // useEffect(() => {
+    //     getItems();
+    // },[])
 
     return (
         <div>
@@ -30,13 +59,17 @@ export default function ShopPage() {
                     SHOP CURRENT INVENTORY
                 </h1>
                 <div className="items-container">
-                    {items.map((item) => {
+                    {data.map((item) => {
 
                         return <div key={item.id}>
-                            <img className="item-image" src={item.image} />
-                            <p className="item-title">{item.title}</p>
-                            <p className="item-name">{item.description}</p>
-                            <p className="item-title">{item.price}</p>
+                            <div className="item-card">
+                                <div className="img-container">
+                                    <img className="item-image" src={item.image} />
+                                </div>
+                                <p className="item-title">{item.title}</p>
+                                <p className="item-name">{item.description}</p>
+                                <p className="item-title">{item.price}</p>
+                            </div>
                         </div>
                     })
                     }

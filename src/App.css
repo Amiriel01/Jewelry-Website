@@ -419,5 +419,27 @@ option {
     font-weight: bold;
 }
 
+.items-container {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item-card {
+    width: 25vw;
+    border: 1px solid pink;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.item-image {
+    width: 10rem;
+    padding: 1rem;
+}
+
 
 
