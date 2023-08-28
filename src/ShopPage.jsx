@@ -10,9 +10,10 @@ export default function ShopPage() {
     const [error, setError] = useState(null);
     const [data, setData] = useState([])
     const { pathname } = useLocation();
+    const [val, setVal] = useState(0);
 
     useEffect(() => {
-      window.scrollTo(0, 0)
+        window.scrollTo(0, 0)
     }, [pathname]);
 
     useEffect(() => {
@@ -41,21 +42,6 @@ export default function ShopPage() {
             });
     }, []);
 
-    // const getItems = () => {
-    //     fetch("https://fakestoreapi.com/products/category/jewelery?limit=3")
-    //         .then(res => {
-    //             res.json()
-    //             // .then((json) => console.log(json)
-    //         })
-    //         .then(data => {
-    //             setItems(data)
-    //         })
-    // }
-
-    // useEffect(() => {
-    //     getItems();
-    // },[])
-
     return (
         <div>
             <header className="homepage">
@@ -74,8 +60,40 @@ export default function ShopPage() {
                                     <img className="item-image" src={item.image} />
                                 </div>
                                 <p className="item-title">{item.title}</p>
-                                <p className="item-name">{item.description}</p>
-                                <p className="item-title">{item.price}</p>
+                                <p className="item-description">{item.description}</p>
+                                <div className="price-rating-container">
+                                    <p className="item-rating">{item.rating.rate}&#9733; / {item.rating.count} ratings</p>
+                                    <p className="item-price">${item.price}</p>
+                                </div>
+                                <div className="add-subt-button-container">
+                                    <button className="subtract-button"
+                                        onClick={() => {
+                                            setVal(Math.max(val - 1, 0))
+                                        }}>
+                                        <span id="subtract" className="material-symbols-outlined">
+                                            remove
+                                        </span>
+                                    </button>
+                                    <input className="item-input-count"
+                                        type="text"
+                                        maxLength={2}
+                                        // placeholder="0"
+                                        pattern="[0-9]*"
+                                        onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                                        value={val}
+                                        onChange={(e) =>
+                                            setVal((v) => (e.target.validity.valid ? e.target.value : v))}
+                                    />
+                                    <button className="add-button"
+                                    onClick={() => {
+                                        setVal(Math.max(val + 1))
+                                    }}
+                                    >
+                                        <span id="add" className="material-symbols-outlined">
+                                            add
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     })
@@ -99,6 +117,7 @@ export default function ShopPage() {
                         </button>
                     </Link>
                 </div>
+                <Header val={val}/>
             </main>
 
         </div>

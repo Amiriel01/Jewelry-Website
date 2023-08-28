@@ -1,9 +1,8 @@
 import React from "react";
 import logolarge from './images/logolarge.png'
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
-import bag from "./images/bag.svg";
 
-export default function Header() {
+export default function Header({val}) {
     return (
         <div>
             <div className="header">
@@ -55,7 +54,7 @@ export default function Header() {
                                     shopping_bag
                                 </span>
                             </Link>
-                            <div className="badge">0</div>
+                            <p className="badge">{val}</p>
                         </li>
 
                     </ul>
