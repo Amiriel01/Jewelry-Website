@@ -11,7 +11,10 @@ export default function ShopPage() {
     const [error, setError] = useState(null);
     const [data, setData] = useState([])
     const { pathname } = useLocation();
-    const [val, setVal] = useState(0);
+    const [totalValue, setTotalValue] = useState(0);
+    const [val1, setVal1] = useState(0);
+    const [val2, setVal2] = useState(0);
+    const [val3, setVal3] = useState(0);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -43,11 +46,15 @@ export default function ShopPage() {
             });
     }, []);
 
+    useEffect(() => {
+        setTotalValue(val1 + val2 + val3)
+    }, [val1, val2, val3])
+
     return (
         <div>
             <header className="homepage">
                 <Header
-                    val={val}
+                totalValue={totalValue}
                 />
             </header>
             <main>
@@ -68,66 +75,96 @@ export default function ShopPage() {
                                     <p className="item-rating">{item.rating.rate}&#9733; / {item.rating.count} ratings</p>
                                     <p className="item-price">${item.price}</p>
                                 </div>
-                                {/* <div className="add-subt-button-container">
-                                    <button className="subtract-button"
-                                        onClick={() => {
-                                            setVal(Math.max(val - 1, 0))
-                                        }}>
-                                        <span id="subtract" className="material-symbols-outlined">
-                                            remove
-                                        </span>
-                                    </button>
-                                    <input className="item-input-count"
-                                        type="text"
-                                        maxLength={2}
-                                        pattern="[0-9]*"
-                                        onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                                        value={val}
-                                        onChange={(e) =>
-                                            setVal((v) => (e.target.validity.valid ? e.target.value : v))}
-                                    />
-                                    <button className="add-button"
-                                        onClick={() => {
-                                            setVal(Math.max(val + 1))
-                                        }}
-                                    >
-                                        <span id="add" className="material-symbols-outlined">
-                                            add
-                                        </span>
-                                    </button>
-                                </div> */}
-                            </div>
-                            <div className="add-subt-button-container">
-                                <button className="subtract-button"
-                                    onClick={() => {
-                                        setVal(Math.max(val - 1, 0))
-                                    }}>
-                                    <span id="subtract" className="material-symbols-outlined">
-                                        remove
-                                    </span>
-                                </button>
-                                <input className="item-input-count"
-                                    type="text"
-                                    maxLength={2}
-                                    pattern="[0-9]*"
-                                    onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                                    value={val}
-                                    onChange={(e) =>
-                                        setVal((v) => (e.target.validity.valid ? e.target.value : v))}
-                                />
-                                <button className="add-button"
-                                    onClick={() => {
-                                        setVal(Math.max(val + 1))
-                                    }}
-                                >
-                                    <span id="add" className="material-symbols-outlined">
-                                        add
-                                    </span>
-                                </button>
                             </div>
                         </div>
                     })
                     }
+                </div>
+                <div className="all-add-subt-button-container">
+                    <div className="add-subt-button-container">
+                        <button className="subtract-button"
+                            onClick={() => {
+                                setVal1(Math.max(val1 - 1, 0))
+                            }}>
+                            <span id="subtract" className="material-symbols-outlined">
+                                remove
+                            </span>
+                        </button>
+                        <input className="item-input-count"
+                            type="text"
+                            maxLength={2}
+                            pattern="[0-9]*"
+                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                            value={val1}
+                            onChange={(e) =>
+                                setVal1((v) => (e.target.validity.valid ? e.target.value : v))}
+                        />
+                        <button className="add-button"
+                            onClick={() => {
+                                setVal1(Math.max(val1 + 1))
+                            }}
+                        >
+                            <span id="add" className="material-symbols-outlined">
+                                add
+                            </span>
+                        </button>
+                    </div>
+                    <div className="add-subt-button-container">
+                        <button className="subtract-button"
+                            onClick={() => {
+                                setVal2(Math.max(val2 - 1, 0))
+                            }}>
+                            <span id="subtract" className="material-symbols-outlined">
+                                remove
+                            </span>
+                        </button>
+                        <input className="item-input-count"
+                            type="text"
+                            maxLength={2}
+                            pattern="[0-9]*"
+                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                            value={val2}
+                            onChange={(e) =>
+                                setVal2((v) => (e.target.validity.valid ? e.target.value : v))}
+                        />
+                        <button className="add-button"
+                            onClick={() => {
+                                setVal2(Math.max(val2 + 1))
+                            }}
+                        >
+                            <span id="add" className="material-symbols-outlined">
+                                add
+                            </span>
+                        </button>
+                    </div>
+                    <div className="add-subt-button-container">
+                        <button className="subtract-button"
+                            onClick={() => {
+                                setVal3(Math.max(val3 - 1, 0))
+                            }}>
+                            <span id="subtract" className="material-symbols-outlined">
+                                remove
+                            </span>
+                        </button>
+                        <input className="item-input-count"
+                            type="text"
+                            maxLength={2}
+                            pattern="[0-9]*"
+                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                            value={val3}
+                            onChange={(e) =>
+                                setVal3((v) => (e.target.validity.valid ? e.target.value : v))}
+                        />
+                        <button className="add-button"
+                            onClick={() => {
+                                setVal3(Math.max(val3 + 1))
+                            }}
+                        >
+                            <span id="add" className="material-symbols-outlined">
+                                add
+                            </span>
+                        </button>
+                    </div>
                 </div>
                 <div className="shop-footer">
                     <span className="material-symbols-outlined" id="diamond" >
