@@ -107,7 +107,8 @@ h1 {
 .repair-footer,
 .appraisal-footer,
 .shop-footer,
-.appointment-footer {
+.appointment-footer,
+.cart-footer {
     text-align: center;
     margin-bottom: 1rem;
     color: rgb(105, 77, 117);
@@ -118,13 +119,15 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 #team-button-container,
 #repair-button-container,
 #appraisal-button-container,
 #shop-button-container,
-#cart-button-container {
+#cart-button-container,
+#home-button-container {
     background-color: #FAF9F6;
     display: flex;
     justify-content: center;
@@ -136,7 +139,8 @@ h1 {
 #appraisal-button,
 #shop-button,
 #cart-button,
-#submit-button {
+#submit-button,
+#home-button {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -305,9 +309,10 @@ h2 {
 }
 
 .repair-container1,
-.appraisal-container {
+.appraisal-container,
+.cart-page-container {
     display: flex;
-    padding: 3rem;
+    padding: 2rem;
     align-items: center;
     justify-content: center;
 }
@@ -500,6 +505,19 @@ input[type=number]{
     font-size: 1.5rem;
     width: 2rem;
 }
+
+#cart-page-title {
+    padding-left: 20rem;
+}
+
+.cart-img {
+    height: 60vh;
+}
+
+.cart-items {
+    background-color: #FAF9F6;
+}
+
 
 
 

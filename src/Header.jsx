@@ -1,8 +1,11 @@
 import React from "react";
 import logolarge from './images/logolarge.png'
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+import Cart from "./Cart";
+
 
 export default function Header({totalValue}) {
+    
     return (
         <div>
             <div className="header">
@@ -56,7 +59,6 @@ export default function Header({totalValue}) {
                             </Link>
                             <p className="badge">{totalValue}</p>
                         </li>
-
                     </ul>
                 </div>
             </div>

@@ -15,6 +15,7 @@ export default function ShopPage() {
     const [val1, setVal1] = useState(0);
     const [val2, setVal2] = useState(0);
     const [val3, setVal3] = useState(0);
+    const [showCart, setShowCart] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -58,6 +59,7 @@ export default function ShopPage() {
                 />
             </header>
             <main>
+                
                 <h1>
                     SHOP CURRENT INVENTORY
                 </h1>
