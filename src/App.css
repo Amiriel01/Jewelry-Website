@@ -211,7 +211,7 @@ h2 {
 }
 
 .care-container,
-.shipping-container {
+.shipping-container{
     border-right: solid 2px rgb(105, 77, 117);
 }
 
@@ -238,14 +238,16 @@ h2 {
 #logo-small,
 .contact-container,
 .social-media-container,
-.hours-container {
+.hours-container,
+.links-container {
     padding: 3rem;
     color: white
 }
 
 #logo-small,
 .contact-container,
-.social-media-container {
+.social-media-container,
+.hours-container  {
     border-right: solid 2px #FAF9F6;
     color: #FAF9F6;
     width: 10rem;
@@ -516,6 +518,13 @@ input[type=number]{
 
 .cart-items {
     background-color: #FAF9F6;
+}
+
+#footer-links {
+    text-decoration: underline;
+    font-size: 1rem;
+    padding-bottom: .5rem;
+    color: white;
 }
 
 

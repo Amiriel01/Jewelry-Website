@@ -12,22 +12,23 @@ import { useState } from "react";
 import { useLocation } from 'react-router-dom'
 import Header from './Header';
 import Footer from './Footer';
+import Card from './Card';
+
 
 function App() {
   
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [data, setData] = useState([])
-  const { pathname } = useLocation();
+  const [data, setData] = useState([]);
   const [totalValue, setTotalValue] = useState(0);
-  const [val1, setVal1] = useState(0);
-  const [val2, setVal2] = useState(0);
-  const [val3, setVal3] = useState(0);
-  const [showCart, setShowCart] = useState(false)
+  const [showCart, setShowCart] = useState(false);
+  const [cartContents, setCartContents] = useState([]);
 
   return (
     <div>
-      <Header />
+      <Header 
+      totalValue = {totalValue}
+      />
       <Routes>
         <Route path="*" element={<HomePage />} />
         <Route path="formpage" element={<FormPage />} />
@@ -35,7 +36,20 @@ function App() {
         <Route path="team" element={<Team />} />
         <Route path="services" element={<Services />} />
         <Route path="appraisals" element={<Appraisals />} />
-        <Route path="shoppage" element={<ShopPage />} />
+        <Route path="shoppage" element={<ShopPage
+        loading={loading} 
+        setLoading={setLoading}
+        error={error}
+        setError={setError}
+        data = {data}
+        setData={setData}
+        totalValue = {totalValue}
+        setTotalValue={setTotalValue}
+        showCart={showCart}
+        setShowCart={setShowCart}
+        cartContents={cartContents}
+        setCartContents={setCartContents}
+        />} />
         <Route path="cart" element={<Cart />} />
       </Routes>
       <Footer />

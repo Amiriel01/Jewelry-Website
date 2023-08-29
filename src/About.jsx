@@ -3,8 +3,16 @@ import Header from "./Header";
 import store from './images/store.png';
 import Team from "./Team";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
+import { useEffect } from "react";
 
 export default function About() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [pathname]);
+
     return (
         <div>
             <main>

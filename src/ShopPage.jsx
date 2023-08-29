@@ -3,10 +3,12 @@ import Header from './Header.jsx'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
-import Cart from "./Cart.jsx";
+import Card from "./Card.jsx";
 
 
-export default function ShopPage() {
+
+export default function ShopPage({ loading, setLoading, error, setError, data, setData, setTotalValue, cartContents, setCartContents }) {
+    const { pathname } = useLocation();
     // const [loading, setLoading] = useState(true);
     // const [error, setError] = useState(null);
     // const [data, setData] = useState([])
@@ -48,121 +50,52 @@ export default function ShopPage() {
     }, []);
 
     useEffect(() => {
-        setTotalValue(val1 + val2 + val3)
-    }, [val1, val2, val3])
+        setTotalValue(cartContents.length)
+    }, [cartContents])
+
+    const addToCart = (item) => {
+        // const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
+        // //check to see if item is already in the cartContents//
+        // if (foundItem != null) {
+        //     //if the item is in the cart, look for count prop on item and incriment it//
+        //     foundItem.count++;
+        // } else {
+        //     //if the item is not in the cart, add to the cart and add count prop to item with value of 1//
+        //     const itemCopy = {...item, count: 1};
+        //     // setCartContents(cartContents)
+        //     cartContents.push(itemCopy);
+        // }
+        let newArray = [...cartContents]
+        newArray.push(item);
+        console.log(newArray);
+        setCartContents(newArray);
+    }
+
+    const removeFromCart = (item) => {
+        
+        let newArray = [...cartContents]
+        newArray.splice(newArray.indexOf(item), 1);
+        console.log(newArray);
+        setCartContents(newArray);
+    }
 
     return (
         <div>
             <main>
-                
+
                 <h1>
                     SHOP CURRENT INVENTORY
                 </h1>
-                <div className="items-container">
+                <>
                     {data.map((item) => {
-
-                        return <div key={item.id}>
-                            <div className="item-card">
-                                <div className="img-container">
-                                    <img className="item-image" src={item.image} />
-                                </div>
-                                <p className="item-title">{item.title}</p>
-                                <p className="item-description">{item.description}</p>
-                                <div className="price-rating-container">
-                                    <p className="item-rating">{item.rating.rate}&#9733; / {item.rating.count} ratings</p>
-                                    <p className="item-price">${item.price}</p>
-                                </div>
-                            </div>
-                        </div>
-                    })
-                    }
-                </div>
-                <div className="all-add-subt-button-container">
-                    <div className="add-subt-button-container">
-                        <button className="subtract-button"
-                            onClick={() => {
-                                setVal1(Math.max(val1 - 1, 0))
-                            }}>
-                            <span id="subtract" className="material-symbols-outlined">
-                                remove
-                            </span>
-                        </button>
-                        <input className="item-input-count"
-                            type="text"
-                            maxLength={2}
-                            pattern="[0-9]*"
-                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                            value={val1}
-                            onChange={(e) =>
-                                setVal1((v) => (e.target.validity.valid ? e.target.value : v))}
-                        />
-                        <button className="add-button"
-                            onClick={() => {
-                                setVal1(Math.max(val1 + 1))
-                            }}
-                        >
-                            <span id="add" className="material-symbols-outlined">
-                                add
-                            </span>
-                        </button>
-                    </div>
-                    <div className="add-subt-button-container">
-                        <button className="subtract-button"
-                            onClick={() => {
-                                setVal2(Math.max(val2 - 1, 0))
-                            }}>
-                            <span id="subtract" className="material-symbols-outlined">
-                                remove
-                            </span>
-                        </button>
-                        <input className="item-input-count"
-                            type="text"
-                            maxLength={2}
-                            pattern="[0-9]*"
-                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                            value={val2}
-                            onChange={(e) =>
-                                setVal2((v) => (e.target.validity.valid ? e.target.value : v))}
-                        />
-                        <button className="add-button"
-                            onClick={() => {
-                                setVal2(Math.max(val2 + 1))
-                            }}
-                        >
-                            <span id="add" className="material-symbols-outlined">
-                                add
-                            </span>
-                        </button>
-                    </div>
-                    <div className="add-subt-button-container">
-                        <button className="subtract-button"
-                            onClick={() => {
-                                setVal3(Math.max(val3 - 1, 0))
-                            }}>
-                            <span id="subtract" className="material-symbols-outlined">
-                                remove
-                            </span>
-                        </button>
-                        <input className="item-input-count"
-                            type="text"
-                            maxLength={2}
-                            pattern="[0-9]*"
-                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                            value={val3}
-                            onChange={(e) =>
-                                setVal3((v) => (e.target.validity.valid ? e.target.value : v))}
-                        />
-                        <button className="add-button"
-                            onClick={() => {
-                                setVal3(Math.max(val3 + 1))
-                            }}
-                        >
-                            <span id="add" className="material-symbols-outlined">
-                                add
-                            </span>
-                        </button>
-                    </div>
-                </div>
+                        return (<Card
+                            item={item}
+                            key={item.id}
+                            addToCart={addToCart}
+                            removeFromCart={removeFromCart}
+                        />)
+                    })}
+                </>
                 <div className="shop-footer">
                     <span className="material-symbols-outlined" id="diamond" >
                         diamond
