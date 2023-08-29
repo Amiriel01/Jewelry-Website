@@ -103,9 +103,6 @@ export default function Team() {
 
     return (
         <div>
-            <header className="homepage">
-                <Header />
-            </header>
             <main>
                 <h1>
                     MEET THE TEAM

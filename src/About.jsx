@@ -7,9 +7,6 @@ import { Link } from "react-router-dom";
 export default function About() {
     return (
         <div>
-            <header className="homepage">
-                <Header />
-            </header>
             <main>
                 <div className="about-container">
                     <div className="store-img-container">

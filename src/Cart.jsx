@@ -15,9 +15,6 @@ export default function Cart({totalValue}) {
 
     return (
         <div>
-            <header className="homepage">
-                <Header />
-            </header>
             <main>
                 <div className="cart-page-container">
                         <img className="cart-img" src={cart} alt="woman wearing a watch and ring" />

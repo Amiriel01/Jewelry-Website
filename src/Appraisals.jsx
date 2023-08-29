@@ -15,9 +15,6 @@ export default function Appraisals() {
 
     return (
         <div>
-            <header className="homepage">
-                <Header />
-            </header>
             <main>
                 <div className="appraisal-container">
                     <img id="appraisal-photo" src={jewelrybox} />

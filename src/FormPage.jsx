@@ -36,9 +36,6 @@ export default function FormPage() {
     }
     return (
         <div>
-            <header className="homepage">
-                <Header />
-            </header>
             <main>
                 <div className="img-info-custom-container">
                     <img id="custom-img" src={custom2} />

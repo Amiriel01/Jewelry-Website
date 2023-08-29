@@ -15,9 +15,6 @@ export default function Services() {
   
     return (
         <div>
-            <header className="homepage">
-                <Header />
-            </header>
             <main>
                 <div className="repair-container1">
                     <img id="repair1-photo" src={repair1} />
