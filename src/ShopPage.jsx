@@ -3,6 +3,7 @@ import Header from './Header.jsx'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
+import Cart from "./Cart.jsx";
 
 
 export default function ShopPage() {
@@ -45,8 +46,8 @@ export default function ShopPage() {
     return (
         <div>
             <header className="homepage">
-                <Header 
-                val={val}
+                <Header
+                    val={val}
                 />
             </header>
             <main>
@@ -67,7 +68,7 @@ export default function ShopPage() {
                                     <p className="item-rating">{item.rating.rate}&#9733; / {item.rating.count} ratings</p>
                                     <p className="item-price">${item.price}</p>
                                 </div>
-                                <div className="add-subt-button-container">
+                                {/* <div className="add-subt-button-container">
                                     <button className="subtract-button"
                                         onClick={() => {
                                             setVal(Math.max(val - 1, 0))
@@ -79,7 +80,6 @@ export default function ShopPage() {
                                     <input className="item-input-count"
                                         type="text"
                                         maxLength={2}
-                                        // placeholder="0"
                                         pattern="[0-9]*"
                                         onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
                                         value={val}
@@ -87,15 +87,43 @@ export default function ShopPage() {
                                             setVal((v) => (e.target.validity.valid ? e.target.value : v))}
                                     />
                                     <button className="add-button"
-                                    onClick={() => {
-                                        setVal(Math.max(val + 1))
-                                    }}
+                                        onClick={() => {
+                                            setVal(Math.max(val + 1))
+                                        }}
                                     >
                                         <span id="add" className="material-symbols-outlined">
                                             add
                                         </span>
                                     </button>
-                                </div>
+                                </div> */}
+                            </div>
+                            <div className="add-subt-button-container">
+                                <button className="subtract-button"
+                                    onClick={() => {
+                                        setVal(Math.max(val - 1, 0))
+                                    }}>
+                                    <span id="subtract" className="material-symbols-outlined">
+                                        remove
+                                    </span>
+                                </button>
+                                <input className="item-input-count"
+                                    type="text"
+                                    maxLength={2}
+                                    pattern="[0-9]*"
+                                    onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                                    value={val}
+                                    onChange={(e) =>
+                                        setVal((v) => (e.target.validity.valid ? e.target.value : v))}
+                                />
+                                <button className="add-button"
+                                    onClick={() => {
+                                        setVal(Math.max(val + 1))
+                                    }}
+                                >
+                                    <span id="add" className="material-symbols-outlined">
+                                        add
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     })
@@ -120,7 +148,6 @@ export default function ShopPage() {
                     </Link>
                 </div>
             </main>
-
         </div>
     )
 }
