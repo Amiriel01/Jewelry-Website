@@ -50,33 +50,61 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
     }, []);
 
     useEffect(() => {
-        setTotalValue(cartContents.length)
+        // setTotalValue(cartContents.length)
+        let sum = 0;
+        for (let i = 0; i < cartContents.length; i++) {
+            let item = cartContents[i];
+            sum = sum + item.count;
+        }
+        setTotalValue(sum);
     }, [cartContents])
 
     const addToCart = (item) => {
-        // const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
-        // //check to see if item is already in the cartContents//
-        // if (foundItem != null) {
-        //     //if the item is in the cart, look for count prop on item and incriment it//
-        //     foundItem.count++;
-        // } else {
-        //     //if the item is not in the cart, add to the cart and add count prop to item with value of 1//
-        //     const itemCopy = {...item, count: 1};
-        //     // setCartContents(cartContents)
-        //     cartContents.push(itemCopy);
-        // }
-        let newArray = [...cartContents]
-        newArray.push(item);
-        console.log(newArray);
-        setCartContents(newArray);
+        const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
+        console.log("something")
+        //check to see if item is already in the cartContents//
+        if (foundItem != null) {
+            //if the item is in the cart, look for count prop on item and incriment it//
+            foundItem.count++;
+        } else {
+            //if the item is not in the cart, add to the cart and add count prop to item with value of 1//
+            const itemCopy = { ...item, count: 1 };
+            // setCartContents(cartContents)
+            // cartContents.push(itemCopy);
+            let newArray = [...cartContents]
+            newArray.push(itemCopy);
+            console.log(newArray);
+            setCartContents(newArray);
+        }
     }
 
+
     const removeFromCart = (item) => {
-        
-        let newArray = [...cartContents]
-        newArray.splice(newArray.indexOf(item), 1);
-        console.log(newArray);
-        setCartContents(newArray);
+        const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
+        //check to see if item is already in the cartContents//
+        if (foundItem != null) {
+            //if the item is in the cart, look for count prop on item and incriment it//
+            foundItem.count--;
+            if (foundItem.count <= 0) {
+                let newArray = [...cartContents]
+                newArray.splice(newArray.indexOf(foundItem), 1);
+                console.log(newArray);
+                setCartContents(newArray);
+            }
+        } 
+    }
+
+    const setQuantity = (item, number) => {
+        const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
+        if (foundItem != null) {
+            foundItem.count = parseInt(number);
+        } else {
+            const itemCopy = { ...item, count: parseInt(number)};
+            let newArray = [...cartContents]
+            newArray.push(itemCopy);
+            console.log(newArray);
+            setCartContents(newArray);
+        }
     }
 
     return (
@@ -86,16 +114,19 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
                 <h1>
                     SHOP CURRENT INVENTORY
                 </h1>
-                <>
-                    {data.map((item) => {
-                        return (<Card
-                            item={item}
-                            key={item.id}
-                            addToCart={addToCart}
-                            removeFromCart={removeFromCart}
-                        />)
-                    })}
-                </>
+                <div className=".all-cards-container">
+                    <>
+                        {data.map((item) => {
+                            return (<Card
+                                item={item}
+                                key={item.id}
+                                addToCart={addToCart}
+                                removeFromCart={removeFromCart}
+                                setQuantity={setQuantity}
+                            />)
+                        })}
+                    </>
+                </div>
                 <div className="shop-footer">
                     <span className="material-symbols-outlined" id="diamond" >
                         diamond

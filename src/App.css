@@ -427,6 +427,12 @@ option {
     font-weight: bold;
 }
 
+.all-cards-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
 .items-container {
     display: flex;
     width: 100vw;

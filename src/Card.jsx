@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export default function Card({ item, removeFromCart, addToCart }) {
+export default function Card({ item, removeFromCart, addToCart, setQuantity }) {
+    const copyItem = {...item};
+
+    useEffect(() => {
+        copyItem.count = item.count;
+    }, [item])
 
     return (
         <>
@@ -27,15 +32,15 @@ export default function Card({ item, removeFromCart, addToCart }) {
                             remove
                         </span>
                     </button>
-                    {/* <input className="item-input-count"
+                    <input className="item-input-count"
                         type="text"
                         maxLength={2}
                         pattern="[0-9]*"
                         onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                        value={val1}
+                        value={copyItem.count}
                         onChange={(e) =>
-                            setVal1((v) => (e.target.validity.valid ? e.target.value : v))}
-                    /> */}
+                            setQuantity(item, e.target.validity.valid ? e.target.value : 0)}
+                    />
                     <button className="add-button"
                         onClick={() => {
                             addToCart(item);
