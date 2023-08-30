@@ -9,15 +9,6 @@ import Card from "./Card.jsx";
 
 export default function ShopPage({ loading, setLoading, error, setError, data, setData, setTotalValue, cartContents, setCartContents }) {
     const { pathname } = useLocation();
-    // const [loading, setLoading] = useState(true);
-    // const [error, setError] = useState(null);
-    // const [data, setData] = useState([])
-    // const { pathname } = useLocation();
-    // const [totalValue, setTotalValue] = useState(0);
-    // const [val1, setVal1] = useState(0);
-    // const [val2, setVal2] = useState(0);
-    // const [val3, setVal3] = useState(0);
-    // const [showCart, setShowCart] = useState(false)
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -123,6 +114,7 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
                                 addToCart={addToCart}
                                 removeFromCart={removeFromCart}
                                 setQuantity={setQuantity}
+                                cartContents={cartContents}
                             />)
                         })}
                     </>
