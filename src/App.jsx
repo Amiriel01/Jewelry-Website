@@ -28,6 +28,7 @@ function App() {
     <div>
       <Header 
       totalValue = {totalValue}
+      cartContents={cartContents}
       />
       <Routes>
         <Route path="*" element={<HomePage />} />
@@ -50,7 +51,9 @@ function App() {
         cartContents={cartContents}
         setCartContents={setCartContents}
         />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="cart" element={<Cart 
+        cartContents={cartContents}
+        />} />
       </Routes>
       <Footer />
     </div>

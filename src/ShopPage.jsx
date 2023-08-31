@@ -26,7 +26,11 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             })
             // .then((json) => console.log(json))
             .then((actualData) => {
-                setData(actualData);
+                setData(
+                    actualData.map((item) => {
+                        return {...item, count: 0}
+                    })
+                );
                 setError(null);
                 console.log(actualData)
             })
@@ -52,11 +56,14 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
 
     const addToCart = (item) => {
         const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
-        console.log("something")
         //check to see if item is already in the cartContents//
         if (foundItem != null) {
+            let newArray = [...cartContents]
+            let index = newArray.findIndex((tempItem) => tempItem.id === item.id);
             //if the item is in the cart, look for count prop on item and incriment it//
             foundItem.count++;
+            newArray[index] = foundItem;
+            setCartContents(newArray);
         } else {
             //if the item is not in the cart, add to the cart and add count prop to item with value of 1//
             const itemCopy = { ...item, count: 1 };
@@ -76,27 +83,36 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
         if (foundItem != null) {
             //if the item is in the cart, look for count prop on item and incriment it//
             foundItem.count--;
+            let newArray = [...cartContents]
             if (foundItem.count <= 0) {
-                let newArray = [...cartContents]
                 newArray.splice(newArray.indexOf(foundItem), 1);
-                console.log(newArray);
-                setCartContents(newArray);
+            } else {
+                let index = newArray.findIndex((tempItem) => tempItem.id === item.id);
+                newArray[index] = foundItem;
             }
-        } 
+            setCartContents(newArray);
+        }
     }
 
     const setQuantity = (item, number) => {
         const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
         if (foundItem != null) {
+            let newArray = [...cartContents]
+            let index = newArray.findIndex((tempItem) => tempItem.id === item.id);
+            //if the item is in the cart, look for count prop on item and incriment it//
             foundItem.count = parseInt(number);
+            newArray[index] = foundItem;
+            setCartContents(newArray);
         } else {
-            const itemCopy = { ...item, count: parseInt(number)};
+            const itemCopy = { ...item, count: parseInt(number) };
             let newArray = [...cartContents]
             newArray.push(itemCopy);
             console.log(newArray);
             setCartContents(newArray);
         }
     }
+
+
 
     return (
         <div>
@@ -105,7 +121,7 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
                 <h1>
                     SHOP CURRENT INVENTORY
                 </h1>
-                <div className=".all-cards-container">
+                <div className="all-cards-container">
                     <>
                         {data.map((item) => {
                             return (<Card

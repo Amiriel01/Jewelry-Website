@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function Card({ item, removeFromCart, addToCart, setQuantity }) {
-    const copyItem = {...item};
+
+export default function Card({ item, removeFromCart, addToCart, setQuantity, cartContents }) {
+    const [itemQuantity, setItemQuantity] = useState(0)
 
     useEffect(() => {
-        copyItem.count = item.count;
-    }, [item])
+        const copyItem = cartContents.find((cartItem) => (item.id === cartItem.id))
+        setItemQuantity(copyItem?.count ?? 0)
+    }, [cartContents])
 
     return (
         <>
@@ -33,11 +35,11 @@ export default function Card({ item, removeFromCart, addToCart, setQuantity }) {
                         </span>
                     </button>
                     <input className="item-input-count"
-                        type="text"
+                        type="number"
                         maxLength={2}
                         pattern="[0-9]*"
                         onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                        value={copyItem.count}
+                        value={itemQuantity}
                         onChange={(e) =>
                             setQuantity(item, e.target.validity.valid ? e.target.value : 0)}
                     />
