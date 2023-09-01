@@ -13,22 +13,24 @@ import { useLocation } from 'react-router-dom'
 import Header from './Header';
 import Footer from './Footer';
 import Card from './Card';
+import CartCard from './CartCard';
 
 
 function App() {
-  
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
   const [totalValue, setTotalValue] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [cartContents, setCartContents] = useState([]);
+  const [totalCartCost, setTotalCartCost] = useState(0);
 
   return (
     <div>
-      <Header 
-      totalValue = {totalValue}
-      cartContents={cartContents}
+      <Header
+        totalValue={totalValue}
+        cartContents={cartContents}
       />
       <Routes>
         <Route path="*" element={<HomePage />} />
@@ -38,21 +40,27 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="appraisals" element={<Appraisals />} />
         <Route path="shoppage" element={<ShopPage
-        loading={loading} 
-        setLoading={setLoading}
-        error={error}
-        setError={setError}
-        data = {data}
-        setData={setData}
-        totalValue = {totalValue}
-        setTotalValue={setTotalValue}
-        showCart={showCart}
-        setShowCart={setShowCart}
-        cartContents={cartContents}
-        setCartContents={setCartContents}
+          loading={loading}
+          setLoading={setLoading}
+          error={error}
+          setError={setError}
+          data={data}
+          setData={setData}
+          totalValue={totalValue}
+          setTotalValue={setTotalValue}
+          showCart={showCart}
+          setShowCart={setShowCart}
+          cartContents={cartContents}
+          setCartContents={setCartContents}
         />} />
-        <Route path="cart" element={<Cart 
-        cartContents={cartContents}
+        <Route path="cart" element={<Cart
+          cartContents={cartContents}
+          totalCartCost={totalCartCost}
+        />} />
+        <Route path="cart" element={<CartCard
+          cartContents={cartContents}
+          totalCartCost={totalCartCost}
+          setTotalCartCost={setTotalCartCost}
         />} />
       </Routes>
       <Footer />
