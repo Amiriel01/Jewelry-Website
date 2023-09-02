@@ -24,7 +24,7 @@ function App() {
   const [totalValue, setTotalValue] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [cartContents, setCartContents] = useState([]);
-  const [totalCartCost, setTotalCartCost] = useState(0);
+
 
   return (
     <div>
@@ -55,12 +55,6 @@ function App() {
         />} />
         <Route path="cart" element={<Cart
           cartContents={cartContents}
-          totalCartCost={totalCartCost}
-        />} />
-        <Route path="cart" element={<CartCard
-          cartContents={cartContents}
-          totalCartCost={totalCartCost}
-          setTotalCartCost={setTotalCartCost}
         />} />
       </Routes>
       <Footer />

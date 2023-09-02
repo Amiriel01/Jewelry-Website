@@ -6,9 +6,19 @@ import { Link } from "react-router-dom";
 import cart from './images/cart.png'
 import CartCard from "./CartCard.jsx";
 
-export default function Cart({ cartContents, totalCartCost }) {
+export default function Cart({ cartContents }) {
 
-   
+    const [totalCartCost, setTotalCartCost] = useState(0);
+
+    useEffect(() => {
+        setTotalCartCost(0);
+        let cartCost = 0;
+        cartContents.forEach(cartItem => {
+            cartCost = (cartCost + (cartItem.count * cartItem.price));
+            console.log(`item ${cartItem.title} count ${cartItem.count} price ${cartItem.price} itemTotal  ${cartItem.count * cartItem.price} total ${cartCost}`);
+        });
+        setTotalCartCost(cartCost);
+    }, [cartContents])
 
     const { pathname } = useLocation();
 
@@ -39,11 +49,13 @@ export default function Cart({ cartContents, totalCartCost }) {
                                 </>
 
                             </div>
-                            <p id="total-cart-value"> ORDER TOTAL: ${totalCartCost}</p>
+                            <div className="order-total-checkout-container">
+                                <p id="total-cart-value"> ORDER TOTAL: ${totalCartCost}</p>
+                                <button id="checkout" onClick={() => { alert('Thank you for visiting my demo webpage. This is the end of the demo.'); }}>Continue to Checkout</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 <div className="cart-footer">
                     <span className="material-symbols-outlined" id="diamond" >
                         diamond

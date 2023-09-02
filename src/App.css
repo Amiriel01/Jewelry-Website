@@ -8,10 +8,6 @@ body {
     width: 100vw;
 }
 
-/* body {
-    overflow-x: hidden;
-} */
-
 .appt-schedule {
     text-align: center;
     padding-top: 1rem;
@@ -140,7 +136,8 @@ h1 {
 #shop-button,
 #cart-button,
 #submit-button,
-#home-button {
+#home-button,
+#checkout {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -429,13 +426,19 @@ option {
 
 .all-cards-container {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: flex-end;
+}
+
+.card-button-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .items-container {
     display: flex;
-    width: 100vw;
     justify-content: space-around;
     align-items: flex-end;
     color: rgb(105, 77, 117);
@@ -443,7 +446,6 @@ option {
 
 .item-card {
     width: 25vw;
-    /* border: 1px solid pink; */
 }
 
 .img-container {
@@ -481,7 +483,6 @@ option {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100vw;
 }
 
 .add-subt-button-container {
@@ -576,4 +577,8 @@ input[type=number] {
     color: rgb(105, 77, 117);
     margin-left: auto;
     margin-right: auto;
+}
+
+.order-total-checkout-container {
+    text-align: center;
 }

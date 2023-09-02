@@ -28,7 +28,7 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             .then((actualData) => {
                 setData(
                     actualData.map((item) => {
-                        return {...item, count: 0}
+                        return { ...item, count: 0 }
                     })
                 );
                 setError(null);

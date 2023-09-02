@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-export default function CartCard({ item, totalCartCost, setTotalCartCost }) {
+export default function CartCard({ item }) {
 
-    useEffect(() => {
-        let count = (item.count);
-        let price = (item.price)
-        let totalItemCost = count * price;
-        console.log(count)
-        console.log(price)
-        console.log(totalItemCost);
-    }, [item])
-
-    useEffect(() => {
-
-    })
+    // useEffect(() => {
+    //     let count = (item.count);
+    //     let price = (item.price);
+    //     let totalItemCost = count * price;
+    //     console.log(count)
+    //     console.log(price)
+    //     console.log(totalItemCost);
+    // }, [item])
 
     return (
         <>
