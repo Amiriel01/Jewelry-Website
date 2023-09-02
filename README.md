@@ -79,6 +79,5 @@ Cart Page
 
 ***Credits***
 
-1. Pexels.com
-    a. Employee Page Photos
-    b. Repair Page Photos
+1. Pexels.com 
+2. Fake Store API
