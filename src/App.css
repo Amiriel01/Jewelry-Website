@@ -17,7 +17,7 @@ body {
     color: white;
     font-weight: bold;
     position: absolute;
-    width: 100%;
+    width: 100vw;
 }
 
 .header-links {
