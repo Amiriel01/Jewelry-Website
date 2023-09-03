@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import cart from './images/cart.png'
 import CartCard from "./CartCard.jsx";
+import ShopPage from "./ShopPage.jsx";
 
 export default function Cart({ cartContents }) {
 
@@ -56,7 +57,10 @@ export default function Cart({ cartContents }) {
                             </div>
                             <div className="order-total-checkout-container">
                                 <p id="total-cart-value"> ORDER TOTAL: {totalCartCost}</p>
-                                <button id="checkout" onClick={() => { alert('Thank you for visiting my demo webpage. This is the end of the demo.'); }}>Continue to Checkout</button>
+                                <div className="cart-buttons">
+                                    <Link id="link" className="link" to="/ShopPage"><button id="edit">Edit Cart</button></Link>
+                                    <button id="checkout" onClick={() => { alert('Thank you for visiting my demo webpage. This is the end of the demo.'); }}>Continue to Checkout</button>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,8 @@ import Card from "./Card.jsx";
 
 
 
-export default function ShopPage({ loading, setLoading, error, setError, data, setData, setTotalValue, cartContents, setCartContents }) {
+
+export default function ShopPage({ loading, setLoading, error, setError, data, setData, totalValue, setTotalValue, cartContents, setCartContents }) {
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -42,7 +43,8 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             .finally(() => {
                 setLoading(false);
             });
-    }, []);
+    }, [])
+
 
     useEffect(() => {
         // setTotalValue(cartContents.length)
@@ -51,7 +53,8 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             let item = cartContents[i];
             sum = sum + item.count;
         }
-        setTotalValue(sum);
+        setTotalValue(sum)
+        // setTotalValue(sum);
     }, [cartContents])
 
     const addToCart = (item) => {
@@ -103,7 +106,7 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             foundItem.count = parseInt(number);
             newArray[index] = foundItem;
             setCartContents(newArray);
-        } else  {
+        } else {
             const itemCopy = { ...item, count: parseInt(number) };
             let newArray = [...cartContents]
             newArray.push(itemCopy);
@@ -111,30 +114,6 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             setCartContents(newArray);
         }
     }
-
-    // const setQuantity = (item, number) => {
-    //     if (!cartContents) {
-    //         setCartContents(0);
-    //     } else {
-    //         const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
-    //         if (foundItem != null) {
-    //             let newArray = [...cartContents]
-    //             let index = newArray.findIndex((tempItem) => tempItem.id === item.id);
-    //             //if the item is in the cart, look for count prop on item and incriment it//
-    //             foundItem.count = parseInt(number);
-    //             newArray[index] = foundItem;
-    //             setCartContents(newArray);
-    //         } else {
-    //             const itemCopy = { ...item, count: parseInt(number) };
-    //             let newArray = [...cartContents]
-    //             newArray.push(itemCopy);
-    //             console.log(newArray);
-    //             setCartContents(newArray);
-    //         }
-    //     }
-    // }
-
-
 
     return (
         <div>
