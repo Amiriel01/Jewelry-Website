@@ -103,7 +103,7 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             foundItem.count = parseInt(number);
             newArray[index] = foundItem;
             setCartContents(newArray);
-        } else {
+        } else  {
             const itemCopy = { ...item, count: parseInt(number) };
             let newArray = [...cartContents]
             newArray.push(itemCopy);
@@ -111,6 +111,28 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             setCartContents(newArray);
         }
     }
+
+    // const setQuantity = (item, number) => {
+    //     if (!cartContents) {
+    //         setCartContents(0);
+    //     } else {
+    //         const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
+    //         if (foundItem != null) {
+    //             let newArray = [...cartContents]
+    //             let index = newArray.findIndex((tempItem) => tempItem.id === item.id);
+    //             //if the item is in the cart, look for count prop on item and incriment it//
+    //             foundItem.count = parseInt(number);
+    //             newArray[index] = foundItem;
+    //             setCartContents(newArray);
+    //         } else {
+    //             const itemCopy = { ...item, count: parseInt(number) };
+    //             let newArray = [...cartContents]
+    //             newArray.push(itemCopy);
+    //             console.log(newArray);
+    //             setCartContents(newArray);
+    //         }
+    //     }
+    // }
 
 
 

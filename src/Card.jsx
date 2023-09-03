@@ -38,12 +38,11 @@ export default function Card({ item, removeFromCart, addToCart, setQuantity, car
                         </button>
                         <input className="item-input-count"
                             type="number"
-                            maxLength={2}
                             pattern="[0-9]*"
                             onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                            value={itemQuantity}
+                            value={itemQuantity || 0}
                             onChange={(e) =>
-                                setQuantity(item, e.target.validity.valid ? e.target.value : 0)}
+                                setQuantity(item, e.target.validity.valid ? (e.target.value ?? 0) : 0)}
                         />
                         <button className="add-button"
                             onClick={() => {
