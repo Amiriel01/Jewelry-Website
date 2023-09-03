@@ -549,12 +549,6 @@ input[type=number] {
 
 #checkout-cart-image {
     width: 20%;
-    
-}
-
-.checkout-quantity-and-price-container {
-    display: flex;
-    justify-content: space-between;
 }
 
 .checkout-all-info-container {
@@ -564,7 +558,7 @@ input[type=number] {
 
 #checkout-cart-title {
     font-weight: bold;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
 }
 
 #total-cart-value {
@@ -580,3 +574,10 @@ input[type=number] {
 .order-total-checkout-container {
     text-align: center;
 }
+
+#checkout-cart-total-item-cost {
+    padding-top: .5rem;
+    font-weight: bold;
+}
+
+

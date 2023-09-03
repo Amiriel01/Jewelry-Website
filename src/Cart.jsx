@@ -17,7 +17,12 @@ export default function Cart({ cartContents }) {
             cartCost = (cartCost + (cartItem.count * cartItem.price));
             console.log(`item ${cartItem.title} count ${cartItem.count} price ${cartItem.price} itemTotal  ${cartItem.count * cartItem.price} total ${cartCost}`);
         });
-        setTotalCartCost(cartCost);
+        setTotalCartCost(Intl.NumberFormat("en-US", {
+            style: 'currency',
+            currency: "USD",
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+        }).format(cartCost));
     }, [cartContents])
 
     const { pathname } = useLocation();
@@ -50,7 +55,7 @@ export default function Cart({ cartContents }) {
 
                             </div>
                             <div className="order-total-checkout-container">
-                                <p id="total-cart-value"> ORDER TOTAL: ${totalCartCost}</p>
+                                <p id="total-cart-value"> ORDER TOTAL: {totalCartCost}</p>
                                 <button id="checkout" onClick={() => { alert('Thank you for visiting my demo webpage. This is the end of the demo.'); }}>Continue to Checkout</button>
                             </div>
                         </div>
