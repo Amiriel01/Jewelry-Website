@@ -26,7 +26,7 @@ export default function CartCard({ item }) {
                     <div className="checkout-quantity-and-price-container">
                         <p id="checkout-cart-quantity">Quantity: {item.count}</p>
                         <p id="checkout-cart-price"> ${item.price} each</p>
-                        <p id="checkout-cart-total-item-cost">Total: {cartTotalItemCost}</p>
+                        <p id="checkout-cart-total-item-cost">Item Total: {cartTotalItemCost}</p>
                     </div>
                 </div>
             </div>
