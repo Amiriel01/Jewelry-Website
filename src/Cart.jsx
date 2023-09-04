@@ -16,7 +16,7 @@ export default function Cart({ cartContents }) {
         let cartCost = 0;
         cartContents.forEach(cartItem => {
             cartCost = (cartCost + (cartItem.count * cartItem.price));
-            console.log(`item ${cartItem.title} count ${cartItem.count} price ${cartItem.price} itemTotal  ${cartItem.count * cartItem.price} total ${cartCost}`);
+            // console.log(`item ${cartItem.title} count ${cartItem.count} price ${cartItem.price} itemTotal  ${cartItem.count * cartItem.price} total ${cartCost}`);
         });
         setTotalCartCost(Intl.NumberFormat("en-US", {
             style: 'currency',

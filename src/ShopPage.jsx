@@ -33,7 +33,6 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
                     })
                 );
                 setError(null);
-                console.log(actualData)
             })
             .catch((err) => {
                 setError(err.message)
@@ -44,7 +43,6 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
                 setLoading(false);
             });
     }, [])
-
 
     useEffect(() => {
         // setTotalValue(cartContents.length)
@@ -74,7 +72,6 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
             // cartContents.push(itemCopy);
             let newArray = [...cartContents]
             newArray.push(itemCopy);
-            console.log(newArray);
             setCartContents(newArray);
         }
     }
@@ -98,6 +95,8 @@ export default function ShopPage({ loading, setLoading, error, setError, data, s
     }
 
     const setQuantity = (item, number) => {
+        number = !!number ? number : 0;
+        
         const foundItem = cartContents.find((cartItem) => (item.id === cartItem.id))
         if (foundItem != null) {
             let newArray = [...cartContents]

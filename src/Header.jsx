@@ -4,8 +4,8 @@ import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import Cart from "./Cart";
 
 
-export default function Header({totalValue}) {
-    
+export default function Header({totalValue, handleClick}) {
+    // console.log(totalValue)
     return (
         <div>
             <div className="header">
@@ -57,7 +57,9 @@ export default function Header({totalValue}) {
                                     shopping_bag
                                 </span>
                             </Link>
-                            <p className="badge">{totalValue}</p>
+                            <p 
+                            // onClick={handleClick}  
+                            className="badge">{totalValue}</p>
                         </li>
                     </ul>
                 </div>

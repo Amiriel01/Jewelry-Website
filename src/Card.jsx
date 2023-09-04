@@ -11,7 +11,6 @@ export default function Card({ item, removeFromCart, addToCart, setQuantity, car
 
     return (
         <>
-
             <div className="card-button-container">
                 <div className="items-container">
                     <div className="item-card">
@@ -27,32 +26,35 @@ export default function Card({ item, removeFromCart, addToCart, setQuantity, car
                     </div>
                 </div>
                 <div className="all-add-subt-button-container">
-                    <div className="add-subt-button-container">
-                        <button className="subtract-button"
-                            onClick={() => {
-                                removeFromCart(item);
-                            }}>
-                            <span id="subtract" className="material-symbols-outlined">
-                                remove
-                            </span>
-                        </button>
-                        <input className="item-input-count"
-                            type="number"
-                            pattern="[0-9]*"
-                            onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
-                            value={itemQuantity || 0}
-                            onChange={(e) =>
-                                setQuantity(item, e.target.validity.valid ? (e.target.value ?? 0) : 0)}
-                        />
-                        <button className="add-button"
-                            onClick={() => {
-                                addToCart(item);
-                            }}
-                        >
-                            <span id="add" className="material-symbols-outlined">
-                                add
-                            </span>
-                        </button>
+                    <div className="all-shop-buttons">
+                        <div className="add-subt-button-container">
+                            <button className="subtract-button"
+                                onClick={() => {
+                                    removeFromCart(item);
+                                }}>
+                                <span id="subtract" className="material-symbols-outlined">
+                                    remove
+                                </span>
+                            </button>
+                            <input className="item-input-count"
+                                type="number"
+                                pattern="[0-9]*"
+                                onKeyDown={(e) => ["e", "E", "+", "-"].includes(e.key) && e.preventDefault()}
+                                value={itemQuantity || 0}
+                                onChange={(e) =>
+                                    setQuantity(item, e.target.validity.valid ? (e.target.value ?? 0) : 0)}
+                            />
+                            <button className="add-button"
+                                onClick={() => {
+                                    addToCart(item);
+                                }}
+                            >
+                                <span id="add" className="material-symbols-outlined">
+                                    add
+                                </span>
+                            </button>
+
+                        </div>
                     </div>
                 </div>
 

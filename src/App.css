@@ -136,7 +136,8 @@ h1 {
 #submit-button,
 #home-button,
 #checkout,
-#edit {
+#edit,
+.add-to-cart {
     padding: 1rem;
     background-color: rgb(105, 77, 117);
     padding: .5rem;
@@ -151,6 +152,15 @@ h1 {
     width: 18rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+.all-shop-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-to-cart {
+    margin-top: 1rem;
 }
 
 h2 {

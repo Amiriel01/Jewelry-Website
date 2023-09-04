@@ -25,12 +25,25 @@ function App() {
   const [showCart, setShowCart] = useState(false);
   const [cartContents, setCartContents] = useState([]);
 
+//  const handleClick = () => {
+//         let sum = 0;
+//         for (let i = 0; i < cartContents.length; i++) {
+//             let item = cartContents[i];
+//             sum = sum + item.count;
+//         }
+//         setTotalValue(sum)
+//         console.log(cartContents)
+//         console.log(sum)
+//         console.log(totalValue)
+//     }
+
 
   return (
     <div>
       <Header
         totalValue={totalValue}
         cartContents={cartContents}
+        // handleClick={handleClick}
       />
       <Routes>
         <Route path="*" element={<HomePage />} />
