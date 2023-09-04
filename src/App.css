@@ -37,7 +37,10 @@ body {
     font-size: 1.1rem;
 }
 
-#appt-text:hover,
+#cart-hover-link:hover {
+    color: rgb(159, 194, 204);
+}
+
 #link:hover,
 .bag-hover {
     color: rgb(159, 194, 204);

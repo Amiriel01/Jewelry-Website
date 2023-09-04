@@ -53,7 +53,7 @@ export default function Header({totalValue, handleClick}) {
                         </li>
                         <li className="bag-hover">
                             <Link id="link" className="link" to="/Cart">
-                                <span className="material-symbols-outlined">
+                                <span id="cart-hover-link" className="material-symbols-outlined">
                                     shopping_bag
                                 </span>
                             </Link>
